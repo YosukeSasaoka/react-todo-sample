@@ -1,5 +1,7 @@
 # 土佐ビジネスアカデミー Nextremer Client
 
+aa
+
 ## React.js製のアプリケーション。
 
 # WWW開発環境
