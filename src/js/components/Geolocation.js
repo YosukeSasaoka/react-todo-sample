@@ -3,6 +3,15 @@ import React from 'react';
 export default class Geolocation extends React.Component {
   constructor( props ) {
     super( props );
+    this.state = { 
+      latitude: 0,
+      longitude: 0,
+      altitude: 0,
+      accuracy: 0,
+      altitudeAccuracy: 0,
+      heading: 0,
+      speed: 0,
+    }
   }
   
   componentDidMount() {
@@ -15,17 +24,16 @@ export default class Geolocation extends React.Component {
           var data = position.coords;
           
           // 取得したデータの整理
-          var lat = data.latitude;
-          var lng = data.longitude;
-          var alt = data.altitude;
-          var accLatlng = data.accuracy;
-          var accAlt = data.altitudeAccuracy;
-          var heading = data.heading;
-          var speed = data.speed;
-          
-          // アラート表示
-          alert( "あなたの現在位置は、\n[" + lat + "," + lng + "]\nです。" );
-          
+          this.setState(
+            {
+              latitude: data.latitude,
+              longitude: data.longitude,
+              altitude: data.altitude,
+              accuracy: data.accuracy,
+              altitudeAccuracy: data.altitudeAccuracy,
+              heading: data.heading,
+              speed: data.speed,
+            });
         },
         (error) => {
           // エラーコード(error.code)の番号
@@ -72,7 +80,15 @@ export default class Geolocation extends React.Component {
   
   render() {
     return (
-       <p>Geolocation Sample</p>
+      <dl>
+        <dt>緯度</dt><dd>{this.state.latitude}</dd>
+        <dt>経度</dt><dd>{this.state.longitude}</dd>
+        <dt>高度</dt><dd>{this.state.altitude}</dd>
+        <dt>緯度、経度の精度</dt><dd>{this.state.accuracy}</dd>
+        <dt>高度の精度</dt><dd>{this.state.altitudeAccuracy}</dd>
+        <dt>方角</dt><dd>{this.state.heading}</dd>
+        <dt>速度</dt><dd>{this.state.speed}</dd>
+      </dl>
     );
   }
 }

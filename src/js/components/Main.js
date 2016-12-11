@@ -4,8 +4,8 @@ import style from './Main.less';
 import { Button } from 'react-bootstrap';
 import Header from './Header';
 import Contents from './Contents/Contents';
-import Geolocation from './Geolocation';
 
+@CSSModules( style)
 export default class Main extends React.Component {
   constructor( props ) {
     super( props );
@@ -13,7 +13,12 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <Geolocation />
+      <div styleName="main">
+        <div styleName="wrapper">
+          <Header />
+          <Contents />
+        </div>
+      </div>
     );
   }
 }
