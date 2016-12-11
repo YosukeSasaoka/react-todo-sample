@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import Header from './Header';
 import Contents from './Contents/Contents';
 
-@CSSModules( style)
+@CSSModules( style )
 export default class Main extends React.Component {
   constructor( props ) {
     super( props );
