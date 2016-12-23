@@ -13,7 +13,10 @@ export default class Header extends React.Component {
     return (
       <div styleName="header">
         <p>React Todo Sample</p>
-        <Link to="/Geolocation">Geolocation Test</Link>
+        <dl>
+         <dd><Link to="/Geolocation">Geolocation Test</Link></dd>
+         <dd><Link to="/MapView">Map Test</Link></dd>
+        </dl>
       </div>
     );
   }
