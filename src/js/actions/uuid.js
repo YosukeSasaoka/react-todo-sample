@@ -2,10 +2,10 @@ import axios from 'axios'
 
 export const RECIEVE_UUID = 'RECIEVE_UUID'
 
-export function recieveUuid(data) {
+export function recieveUuid(uuid) {
   return {
     type: RECIEVE_UUID,
-    uuid: data
+    uuid
   }
 }
 

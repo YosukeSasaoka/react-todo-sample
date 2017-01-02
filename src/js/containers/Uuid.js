@@ -13,9 +13,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(uuidActions, dispatch)
 }
 
-const UuidContainer = connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Uuid)
 
-export default UuidContainer
