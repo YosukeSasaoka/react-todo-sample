@@ -1,5 +1,5 @@
 import {createStore,  applyMiddleware} from 'redux'
-import uuid from '../reducers/uuid'
+import uuidApp from '../reducers'
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 
@@ -8,6 +8,6 @@ export default function configureStore() {
   const createStoreWithMiddleware = applyMiddleware(
     thunk, logger
   )(createStore);
-  const store = createStoreWithMiddleware(uuid);
+  const store = createStoreWithMiddleware(uuidApp);
   return store;
 }

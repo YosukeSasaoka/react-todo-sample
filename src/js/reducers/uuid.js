@@ -1,9 +1,9 @@
 import * as uuidActions from '../actions/uuid';
 
-export default function uuid(state={uuid : ''}, action) {
+export default function uuid(state='', action) {
   switch(action.type){
     case uuidActions.RECIEVE_UUID:
-     return {uuid : action.uuid};
+     return action.uuid;
     default:
       return state;
   }
