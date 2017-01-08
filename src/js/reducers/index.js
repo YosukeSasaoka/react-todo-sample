@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux'
 import uuid from './uuid'
+import name from './name'
 
-const uuidApp = combineReducers({ uuid })
-export default uuidApp
+const app = combineReducers({ uuid, name })
+export default app
