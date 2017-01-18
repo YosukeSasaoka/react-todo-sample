@@ -1,8 +1,8 @@
-import * as uuidActions from '../actions/uuid';
+import { RECIEVE_UUID } from '../constants/ActionTypes'
 
 export default function uuid(state='', action) {
   switch(action.type){
-    case uuidActions.RECIEVE_UUID:
+    case RECIEVE_UUID:
      return action.uuid;
     default:
       return state;
