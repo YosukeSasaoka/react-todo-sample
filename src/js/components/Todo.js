@@ -1,9 +1,9 @@
 import React from 'react';
-import CSSModules from 'react-css-modules';
-import style from './Todo.less';
-import { Button } from 'react-bootstrap';
-import Header from './Header';
-import Contents from './TodoApp/Contents';
+import CSSModules from 'react-css-modules'
+import style from './Todo.less'
+import { Button } from 'react-bootstrap'
+import Header from './Header'
+import TodoApp from '../containers/TodoApp'
 
 @CSSModules( style )
 export default class Todo extends React.Component {
@@ -17,7 +17,7 @@ export default class Todo extends React.Component {
         <Header />
         <div styleName="todo">
           <div styleName="wrapper">
-            <Contents />
+            <TodoApp />
           </div>
         </div>
       </div>

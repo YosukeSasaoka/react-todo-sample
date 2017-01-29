@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './AddForm.less';
 import { FormControl } from 'react-bootstrap';
 
 @CSSModules( style )
 export default class AddForm extends React.Component {
-  constructor( props ) {
-    super( props );
-    this.state = { text: '' };
+  state = {
+    text: this.props.text || ''
   }
 
   changeText( e ) {
@@ -39,5 +38,10 @@ export default class AddForm extends React.Component {
       </div>
     );
   }
+}
+
+AddForm.propTypes = {
+    addTodo: PropTypes.func.isRequired,
+    text: PropTypes.string
 }
 

@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './TodoList.less';
 import { Checkbox } from 'react-bootstrap';
 
 @CSSModules( style )
 export default class TodoList extends React.Component {
-  constructor( props ) {
-    super( props );
-  }
-
   toggle( id, e ) {
     this.props.toggle( id );
   }
@@ -33,5 +29,10 @@ export default class TodoList extends React.Component {
       </div>
     );
   }
+}
+
+TodoList.propTypes = {
+    todos: PropTypes.array.isRequired,
+    toggle: PropTypes.func.isRequired,
 }
 

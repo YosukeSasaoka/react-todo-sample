@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './Contents.less';
 import AddForm from './AddForm';
@@ -6,11 +6,6 @@ import TodoList from './TodoList';
 
 @CSSModules( style )
 export default class Contents extends React.Component {
-  constructor( props ) {
-    super( props );
-    this.state = { todos: [] };
-  }
-
   addTodo( text ) {
     this.setState({
       ...this.state,
@@ -29,17 +24,23 @@ export default class Contents extends React.Component {
   }
 
   render() {
+    const { todos, actions } = this.props
     return (
       <div styleName="contents">
         <AddForm
-          addTodo={ ::this.addTodo }
+          addTodo={ actions.addTodo }
         />
         <TodoList
-          todos={ this.state.todos }
-          toggle={ ::this.toggle }
+          todos={ todos }
+          toggle={ actions.completeTodo }
         />
       </div>
     );
   }
+}
+
+Contents.propTypes = {
+    todos: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 }
 
