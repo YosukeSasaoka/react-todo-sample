@@ -12,8 +12,10 @@ export default class Header extends React.Component {
   render() {
     return (
       <div styleName="header">
-        <p>React Todo Sample</p>
-				<Link to="/User">User test</Link>
+        <ul>
+				  <li><Link to="/Todo">React Todo App</Link></li>
+				  <li><Link to="/User">User test</Link></li>
+        </ul>
       </div>
     );
   }
