@@ -1,6 +1,5 @@
 # 土佐ビジネスアカデミー Nextremer Client
 
-aa
 
 ## React.js製のアプリケーション。
 
