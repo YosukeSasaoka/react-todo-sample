@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 
 import Todo from './components/Todo'
 import User from './components/User'
+import Hoge from './components/Hoge'
 
 import configureStore, { DevTools } from './store/configureStore'
 const store = configureStore()
@@ -20,10 +21,11 @@ ReactDOM.render(
         <Route path="/" component={User}/>
         <Route path="User" component={User}/>
         <Route path="Todo" component={Todo}/>
+        <Route path="Hoge" component={Hoge}/>
       </Router>
       <DevTools />
     </div>
-  </Provider>, 
+  </Provider>,
   document.getElementById('main')
 );
 
