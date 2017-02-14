@@ -13,8 +13,9 @@ export default class Header extends React.Component {
     return (
       <div styleName="header">
         <ul>
-				  <li><Link to="/Todo">React Todo App</Link></li>
-				  <li><Link to="/User">User test</Link></li>
+          <li><Link to="/Todo">React Todo App</Link></li>
+			    <li><Link to="/User">User test</Link></li>
+			    <li><Link to="/Hoge">hoge</Link></li>
         </ul>
       </div>
     );
